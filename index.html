@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Event Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Smart Event Manager</h1>
+            <p>Organize your events with ease</p>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-primary" onclick="toggleForm()"> Add New Event</button>
+            <button class="btn btn-success filter-btn active" onclick="filterEvents('all')">All Events</button>
+            <button class="btn btn-danger filter-btn" onclick="filterEvents('pending')">Pending</button>
+            <button class="btn btn-success filter-btn" onclick="filterEvents('completed')">Completed</button>
+        </div>
+
+        <form id="eventForm">
+            <div class="form-group">
+                <label for="eventTitle">Event Title</label>
+                <input type="text" id="eventTitle" required placeholder="e.g. Team Meeting">
+            </div>
+            <div class="form-group">
+                <label for="eventDate">Date & Time</label>
+                <input type="datetime-local" id="eventDate" required>
+            </div>
+            <div class="form-group">
+                <label for="eventDesc">Description</label>
+                <textarea id="eventDesc" rows="4" placeholder="Event details..."></textarea>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Event</button>
+                <button type="button" class="btn btn-danger" onclick="toggleForm()">Cancel</button>
+            </div>
+        </form>
+
+        <div class="events-grid" id="eventsContainer">
+            <div class="empty-state">
+                <h3>No events yet</h3>
+                <p>Click "Add New Event" to get started</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
